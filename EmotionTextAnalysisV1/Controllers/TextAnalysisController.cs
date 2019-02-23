@@ -5,6 +5,9 @@ using EmotionTextAnalysisV1.Services;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
 using Newtonsoft.Json;
+using EmotionTextAnalysisV1.Models.IBMResponseModel;
+using EmotionTextAnalysisV1.Models.GoogleTranslateModel;
+using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,16 +27,23 @@ namespace EmotionTextAnalysisV1.Controllers
         public IActionResult TextAnalysisCall(TextAnalysisCallViewModel textAnalysisCallViewModel)
         {
 
-            //Aqui devo chamar a api da ibm para analisar o texto e com o retorno criar a pagina para mostrar  analise do texto!!!!!!
+            //manda a setença pro google e verifica qual a linguagem, se for diferente de en ou fr, traduz pra en e retorna o texto em ingles.
+
+
+
             var IBMToneAnalizerService = new IBMToneAnalizerService();
-            IRestResponse result = IBMToneAnalizerService
-            .GetToneAnalizer(textAnalysisCallViewModel.Text, textAnalysisCallViewModel.Language)
-            .GetAwaiter()
-            .GetResult();
+            var googleTranslateService = new GoogleTranslateApiService();
 
-            HttpStatusCode statusCode = result.StatusCode;
+            IRestResponse resultFromGoogleTranslate = googleTranslateService.GetTextTranslationFromGoogle(textAnalysisCallViewModel.Text);
 
-            TextAnalysisResponseViewModel toneAnalizer = JsonConvert.DeserializeObject<TextAnalysisResponseViewModel>(result.Content);
+            var googleTranslate = JsonConvert.DeserializeObject<GoogleTranslateModel>(resultFromGoogleTranslate.Content);
+
+            IRestResponse resultFromToneAnalizer = IBMToneAnalizerService.GetToneAnalizer(googleTranslate.data.translations.FirstOrDefault().translatedText
+            , textAnalysisCallViewModel.Language);
+
+            //HttpStatusCode statusCode = resultFromToneAnalizer.StatusCode;
+
+             var toneAnalizer = JsonConvert.DeserializeObject<ToneAnalizer>(resultFromToneAnalizer.Content);
 
             return View(new TextAnalysisResponseViewModel());
         }

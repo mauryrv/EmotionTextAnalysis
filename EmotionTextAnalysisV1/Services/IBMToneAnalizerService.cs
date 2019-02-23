@@ -12,7 +12,7 @@ namespace EmotionTextAnalysisV1.Services
         {
         }
 
-        public async Task<IRestResponse> GetToneAnalizer(string text, string language)
+        public IRestResponse GetToneAnalizer(string text, string language)
         {
             var client = new RestClient(IBMHelper.Url);
 

@@ -11975,11 +11975,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysisV1/EmotionTextAnalysisV1/EmotionTextAnalysisV1.csproj",
+      "projectUniqueName": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysis/EmotionTextAnalysisV1/EmotionTextAnalysisV1.csproj",
       "projectName": "EmotionTextAnalysisV1",
-      "projectPath": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysisV1/EmotionTextAnalysisV1/EmotionTextAnalysisV1.csproj",
+      "projectPath": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysis/EmotionTextAnalysisV1/EmotionTextAnalysisV1.csproj",
       "packagesPath": "/Users/mauryrv/.nuget/packages/",
-      "outputPath": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysisV1/EmotionTextAnalysisV1/obj",
+      "outputPath": "/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysis/EmotionTextAnalysisV1/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

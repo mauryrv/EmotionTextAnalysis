@@ -16,5 +16,9 @@
     <Folder Include="Services\" />
     <Folder Include="Models\IBMResponseModel\" />
     <Folder Include="Util\" />
+    <Folder Include="Models\GoogleTranslateModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\GoogleTranslate.cs" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{7D97A21A-B138-4CCF-B0D8-7995DE1E7FE9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmotionTextAnalysisV1/Services/GoogleTranslateApiService.cs">
+    <Files>
+      <File FileName="EmotionTextAnalysisV1/Controllers/TextAnalysisController.cs" Line="28" Column="143" />
+      <File FileName="EmotionTextAnalysisV1/Models/IBMResponseModel/ToneAnalizer.cs" Line="11" Column="2" />
+      <File FileName="EmotionTextAnalysisV1/Models/TextAnalysisResponseViewModel.cs" Line="16" Column="1" />
+      <File FileName="EmotionTextAnalysisV1/Services/IBMToneAnalizerService.cs" Line="13" Column="10" />
+      <File FileName="EmotionTextAnalysisV1/Services/GoogleTranslateApiService.cs" Line="2" Column="50" />
+      <File FileName="EmotionTextAnalysisV1/Util/GoogleHelper.cs" Line="8" Column="87" />
+      <File FileName="EmotionTextAnalysisV1/Models/GoogleTranslateModel/GoogleTranslate.cs" Line="5" Column="6" />
+      <File FileName="EmotionTextAnalysisV1/Models/GoogleTranslateModel/Translation.cs" Line="5" Column="6" />
+      <File FileName="EmotionTextAnalysisV1/Models/GoogleTranslateModel/Data.cs" Line="10" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.EmotionTextAnalysisV1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mauryrv/Documents/TCC Inatel Pós/Projeto/EmotionTextAnalysis/EmotionTextAnalysisV1/Controllers/TextAnalysisController.cs" relfile="EmotionTextAnalysisV1/Controllers/TextAnalysisController.cs" line="42" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
