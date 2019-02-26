@@ -26,11 +26,7 @@ namespace EmotionTextAnalysisV1.Controllers
         [HttpPost]
         public IActionResult TextAnalysisCall(TextAnalysisCallViewModel textAnalysisCallViewModel)
         {
-
-            //manda a setença pro google e verifica qual a linguagem, se for diferente de en ou fr, traduz pra en e retorna o texto em ingles.
-
-
-
+        
             var IBMToneAnalizerService = new IBMToneAnalizerService();
             var googleTranslateService = new GoogleTranslateApiService();
 

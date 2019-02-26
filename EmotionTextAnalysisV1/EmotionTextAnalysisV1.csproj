@@ -17,6 +17,7 @@
     <Folder Include="Models\IBMResponseModel\" />
     <Folder Include="Util\" />
     <Folder Include="Models\GoogleTranslateModel\" />
+    <Folder Include="Models\TextAnalysisResponseModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\GoogleTranslate.cs" />
