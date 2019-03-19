@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="RestSharp" Version="106.6.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,5 +22,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\GoogleTranslate.cs" />
+    <Compile Remove="Data\RazorPagesMovieContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\Movies\Details.cshtml" />
   </ItemGroup>
 </Project>

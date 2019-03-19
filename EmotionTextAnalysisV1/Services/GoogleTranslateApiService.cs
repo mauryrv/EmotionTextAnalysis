@@ -20,7 +20,7 @@ namespace EmotionTextAnalysisV1.Services
 
             request.AddQueryParameter("q", text);
             request.AddQueryParameter("target", GoogleHelper.Language);
-            request.AddQueryParameter("key", IBMHelper.ApiKey);
+            request.AddQueryParameter("key", "AIzaSyCvY8g-39rsqPTBV_Ks8igla7zMWWtfiJ4");
 
             request.RequestFormat = DataFormat.Json;
 

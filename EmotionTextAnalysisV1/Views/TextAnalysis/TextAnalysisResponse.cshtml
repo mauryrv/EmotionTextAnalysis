@@ -1,4 +1,66 @@
-﻿@model TextAnalysisResponseViewModel
-@{
-    ViewData["Title"] = "Error";
-}
+﻿    @model TextAnalysisResponseViewModel
+    @{
+
+    }
+    <h2>Analise de seu texto</h2>
+
+    <div>
+        <h4>Analise Geral do Texto</h4>
+        <hr />
+        <div class="row">
+
+            @if (Model.GeneralText.Feelings != null)
+        {
+
+
+            @foreach (var x in Model.GeneralText.Feelings)
+        {
+            <label asp-for=@x.FeelingName class="control-label"></label>
+            <input asp-for=@x.FeelingName class="form-control" disabled />
+            <label asp-for=@x.Score class="control-label"></label>
+            <input asp-for=@x.Score class="form-control" disabled />
+
+    }
+    }
+    else
+    {
+        <label>No data available.</label>
+
+    }
+        </div>
+        <div class="row">
+            <h4>Analise Por Frase</h4>
+            <hr />
+
+
+            @if (Model.SentencesAnalysis != null)
+            {
+                @foreach (var x in Model.SentencesAnalysis)
+                {
+                <label asp-for=@x.Text class="control-label"></label>
+                <input asp-for=@x.Text class="form-control" disabled />
+                @foreach (var y in x.Feelings)
+                {
+                <label asp-for=@y.FeelingName class="control-label"></label>
+                <input asp-for=@y.FeelingName class="form-control" disabled />
+                <label asp-for=@y.Score class="control-label"></label>
+                <input asp-for=@y.Score class="form-control" disabled />
+
+                }
+                }
+            }
+            else
+            {
+                <label>No data available.</label>
+            }
+        </div>
+    </div>
+    <div>
+    </div>
+
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
