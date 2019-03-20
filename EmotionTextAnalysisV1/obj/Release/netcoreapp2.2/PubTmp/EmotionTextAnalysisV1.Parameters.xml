@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="EmotionTextAnalysis" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/mauryrv/Documents/TCC\ Inatel\ Pós/Projeto/EmotionTextAnalysis/EmotionTextAnalysisV1/obj/Release/netcoreapp2\.2/PubTmp/Out/$" />
+  </parameter>
+</parameters>

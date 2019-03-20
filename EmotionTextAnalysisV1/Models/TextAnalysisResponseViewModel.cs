@@ -10,6 +10,7 @@ namespace EmotionTextAnalysisV1.Models
 {
     public class TextAnalysisResponseViewModel
     {
+        public string Text { get; set; }
         public GeneralText GeneralText { get; set; }
         public List<Phrases> SentencesAnalysis { get; set; }
     }

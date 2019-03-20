@@ -1,66 +1,119 @@
-﻿    @model TextAnalysisResponseViewModel
-    @{
+﻿@model TextAnalysisResponseViewModel
+@{
 
-    }
-    <h2>Analise de seu texto</h2>
-
-    <div>
-        <h4>Analise Geral do Texto</h4>
-        <hr />
-        <div class="row">
-
-            @if (Model.GeneralText.Feelings != null)
-        {
+}
 
 
-            @foreach (var x in Model.GeneralText.Feelings)
-        {
-            <label asp-for=@x.FeelingName class="control-label"></label>
-            <input asp-for=@x.FeelingName class="form-control" disabled />
-            <label asp-for=@x.Score class="control-label"></label>
-            <input asp-for=@x.Score class="form-control" disabled />
-
-    }
-    }
-    else
+<div class="container">
+    <h2>Your Text Analysis</h2>
+    @if (Model.GeneralText.Feelings != null)
     {
-        <label>No data available.</label>
-
-    }
-        </div>
         <div class="row">
-            <h4>Analise Por Frase</h4>
+            <h4>General Text Analysis</h4>
             <hr />
 
 
-            @if (Model.SentencesAnalysis != null)
-            {
-                @foreach (var x in Model.SentencesAnalysis)
-                {
-                <label asp-for=@x.Text class="control-label"></label>
-                <input asp-for=@x.Text class="form-control" disabled />
-                @foreach (var y in x.Feelings)
-                {
-                <label asp-for=@y.FeelingName class="control-label"></label>
-                <input asp-for=@y.FeelingName class="form-control" disabled />
-                <label asp-for=@y.Score class="control-label"></label>
-                <input asp-for=@y.Score class="form-control" disabled />
+            <textarea TextMode="MultiLine" Rows="6" style="width: 600px;" readonly asp-for=@Model.Text> </textarea>
+            <br />
+            <br />
 
-                }
-                }
-            }
-            else
-            {
-                <label>No data available.</label>
-            }
+            <table id="generalAnalysisTable" class="table" cellspacing="1" border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Feeling
+                        </th>
+                        <th>
+                            Score
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.GeneralText.Feelings)
+                    {
+                        <tr>
+                            <td>
+                                @x.FeelingName
+                            </td>
+                            <td>
+                                @x.Score
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
         </div>
-    </div>
-    <div>
-    </div>
-
-
-
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
+    else
+    {
+        <label> No Data Available.</label>
+
+    }
+    <br />
+
+    @if (Model.SentencesAnalysis != null)
+    {
+        <div class="row">
+            <h4>Sentence Analysis</h4>
+            <hr />
+
+            <table id="generalAnalysisTable" class="table" cellspacing="1" border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Sentence
+                        </th>
+                        <th>
+                            Analysis
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.SentencesAnalysis)
+                    {
+                        <tr>
+                            <td>
+                                @x.Text
+                            </td>
+                            <td>
+
+                                <table id="generalAnalysisTable" class="table" cellspacing="1">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Feeling
+                                            </th>
+                                            <th>
+                                                Score
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var y in x.Feelings)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @y.FeelingName
+                                                </td>
+                                                <td>
+                                                    @y.Score
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

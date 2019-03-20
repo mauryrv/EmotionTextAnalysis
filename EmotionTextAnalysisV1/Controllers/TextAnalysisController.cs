@@ -59,8 +59,8 @@ namespace EmotionTextAnalysisV1.Controllers
             }
 
             textAnalysisResponseViewModel = TextAnalysisResponseViewModelMapper(toneAnalizer);
+            textAnalysisResponseViewModel.Text = textAnalysisCallViewModel.Text;
 
-            //return View(textAnalysisResponseViewModel);
             return View("textAnalysisResponse", textAnalysisResponseViewModel);
         }
 
@@ -119,6 +119,7 @@ namespace EmotionTextAnalysisV1.Controllers
                             Feelings = feelingsSetences
                         });
 
+                        feelingsSetences = new List<Feelings>();
 
                     }
 
